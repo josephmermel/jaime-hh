@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tel Aviv Happy Hour — Group Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EC;
+    --warm-white: #FDFAF5;
+    --sand: #E8DCC8;
+    --terracotta: #C4622D;
+    --terracotta-light: #E8825A;
+    --olive: #5C6B3A;
+    --ink: #1E1A14;
+    --ink-light: #4A4236;
+    --muted: #8A7D6E;
+    --card-bg: #FFFFFF;
+    --border: #D9CDB8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    padding-bottom: 60px;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-text { flex: 1; }
+
+  .header-occasion {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(13px, 2vw, 17px);
+    color: rgba(247,243,236,0.55);
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+
+  .header-logo {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.92;
+  }
+
+  .header-logo svg {
+    width: 72px;
+    height: 100px;
+    filter: drop-shadow(0 0 12px rgba(232,130,90,0.3));
+  }
+
+  .logo-label {
+    font-size: 22px;
+    line-height: 1;
+    filter: drop-shadow(0 0 6px rgba(232,130,90,0.4));
+  }
+
+  @media (max-width: 480px) {
+    .header-logo { display: none; }
+  }
+
+  /* HEADER */
+  header {
+    background-color: var(--ink);
+    color: var(--cream);
+    padding: 52px 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    border: 1px solid rgba(247,243,236,0.08);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -90px; left: 30%;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,98,45,0.2);
+  }
+
+  .header-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta-light);
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 400;
+    line-height: 1.1;
+    max-width: 640px;
+    margin-bottom: 16px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--terracotta-light);
+  }
+
+  header p {
+    font-size: 15px;
+    color: rgba(247,243,236,0.65);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* NOISE LEGEND */
+  .legend {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    padding: 20px 48px;
+    background-color: var(--sand);
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+  }
+
+  .legend-title {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 4px;
+  }
+
+  .legend-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    color: var(--ink-light);
+  }
+
+  .noise-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .noise-1 { background: #EAF2E3; color: #3D6B2A; }
+  .noise-2 { background: #FDF3DC; color: #7A5C10; }
+  .noise-3 { background: #FDEADC; color: #8B3A10; }
+
+  /* SECTION HEADERS */
+  .section-label {
+    padding: 36px 48px 0;
+  }
+
+  .section-label h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 0;
+  }
+
+  .section-label h2 span {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  /* GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    padding: 20px 48px 0;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 6px 24px rgba(30,26,20,0.09);
+  }
+
+  .card-top {
+    padding: 22px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .card-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 2px;
+  }
+
+  .badge-new { background: var(--terracotta); color: white; }
+  .badge-quiet { background: #EAF2E3; color: #3D6B2A; }
+  .badge-jaffa { background: #E8DCC8; color: #5C4A2A; }
+  .badge-central { background: #E0E8F0; color: #2A4060; }
+  .badge-nevetze { background: #EDE8F5; color: #4A2A7A; }
+
+  .card-name {
+    padding: 8px 24px 0;
+  }
+
+  .card-name h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .card-name .transliteration {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 10px 24px 0;
+    align-items: center;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    color: var(--ink-light);
+  }
+
+  .meta-icon {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  .card-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 14px 24px;
+  }
+
+  .card-pitch {
+    padding: 0 24px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    flex: 1;
+  }
+
+  .card-footer {
+    padding: 14px 24px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+  }
+
+  .footer-tag {
+    font-size: 11.5px;
+    color: var(--ink-light);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 3px 9px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footer-tag strong {
+    font-weight: 500;
+    color: var(--terracotta);
+  }
+
+  .noise-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    color: var(--muted);
+    padding: 0 24px 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .noise-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .dot.filled { background: var(--olive); }
+  .dot.filled.loud { background: var(--terracotta); }
+
+  /* QUICK REFERENCE TABLE */
+  .quick-ref {
+    margin: 36px 48px 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .quick-ref-header {
+    padding: 16px 24px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead th {
+    background: var(--sand);
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #F0EAE0;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody tr:nth-child(even) { background: #FDFAF5; }
+
+  tbody td {
+    padding: 11px 16px;
+    color: var(--ink-light);
+    vertical-align: middle;
+  }
+
+  tbody td:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .hh-pill {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #EAF2E3;
+    color: #3D6B2A;
+    font-weight: 500;
+  }
+
+  .no-hh {
+    font-size: 11.5px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* FOOTER NOTE */
+  .footer-note {
+    margin: 30px 48px 0;
+    padding: 20px 24px;
+    background: var(--sand);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    border-left: 3px solid var(--terracotta);
+  }
+
+  .footer-note strong { color: var(--ink); font-weight: 500; }
+
+  /* MENU LINK & DIETARY */
+  .card-links {
+    padding: 0 24px 0;
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .menu-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--terracotta);
+    text-decoration: none;
+    border: 1px solid var(--terracotta);
+    border-radius: 3px;
+    padding: 4px 10px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .menu-link:hover {
+    background: var(--terracotta);
+    color: white;
+  }
+
+  .dietary-row {
+    padding: 8px 24px 0;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .diet-tag {
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  .diet-gf-yes  { background: #E6F4EA; color: #2D6A3F; border: 1px solid #B7DFC3; }
+  .diet-gf-lim  { background: #FFF8E1; color: #7A5C10; border: 1px solid #F0D88A; }
+  .diet-gf-no   { background: #F5EDEC; color: #8B3A2A; border: 1px solid #DDB8B0; }
+  .diet-df-yes  { background: #E8F0FB; color: #1A4A8A; border: 1px solid #AECAF0; }
+  .diet-df-lim  { background: #FFF3E0; color: #7A4B10; border: 1px solid #F0C87A; }
+  .diet-df-no   { background: #F5EDEC; color: #8B3A2A; border: 1px solid #DDB8B0; }
+
+  @media (max-width: 600px) {
+    header, .legend, .section-label, .cards-grid, .quick-ref, .footer-note {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .cards-grid { grid-template-columns: 1fr; gap: 16px; padding: 16px 20px 0; }
+    .quick-ref { margin: 24px 20px 0; }
+    header { padding: 36px 20px 32px; }
+    .legend { padding: 16px 20px; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-text">
+      <div class="header-eyebrow">Tel Aviv · June 2026</div>
+      <div class="header-occasion">Jaime's Pre-Birthday</div>
+      <h1>Happy Hour<br><em>Field Guide</em></h1>
+      <p>Eight shortlisted spots for drinks and food — researched and rated for a group of 6, including our out-of-town guests.</p>
+    </div>
+    <div class="header-logo">
+      <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-label="Wine glass logo">
+        <!-- Glass bowl -->
+        <path d="M22 8 Q18 42 34 62 Q42 72 50 74 Q58 72 66 62 Q82 42 78 8 Z"
+              fill="none" stroke="#E8825A" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- Liquid fill inside bowl -->
+        <path d="M27 32 Q24 50 36 63 Q43 71 50 73 Q57 71 64 63 Q76 50 73 32 Z"
+              fill="rgba(196,98,45,0.18)"/>
+        <!-- Bubble 1 -->
+        <circle cx="44" cy="52" r="2" fill="none" stroke="#E8825A" stroke-width="1.2" opacity="0.7"/>
+        <!-- Bubble 2 -->
+        <circle cx="56" cy="44" r="1.4" fill="none" stroke="#E8825A" stroke-width="1" opacity="0.6"/>
+        <!-- Bubble 3 -->
+        <circle cx="48" cy="62" r="1" fill="none" stroke="#E8825A" stroke-width="0.9" opacity="0.5"/>
+        <!-- Stem -->
+        <line x1="50" y1="74" x2="50" y2="118" stroke="#E8825A" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Base -->
+        <path d="M32 118 Q50 112 68 118" fill="none" stroke="#E8825A" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Celebratory star sparks -->
+        <g opacity="0.75" stroke="#E8825A" stroke-width="1.4" stroke-linecap="round">
+          <line x1="78" y1="14" x2="82" y2="10"/>
+          <line x1="80" y1="12" x2="76" y2="12"/>
+          <line x1="80" y1="12" x2="80" y2="8"/>
+          <line x1="87" y1="28" x2="92" y2="26"/>
+          <line x1="89.5" y1="27" x2="89.5" y2="22"/>
+          <line x1="14" y1="22" x2="9" y2="20"/>
+          <line x1="11.5" y1="21" x2="11.5" y2="16"/>
+        </g>
+        <!-- "JB" monogram at base of stem -->
+        <text x="50" y="134" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#E8825A" opacity="0.9">J</text>
+      </svg>
+      <div class="logo-label">🥂</div>
+    </div>
+  </div>
+</header>
+
+<div class="legend">
+  <span class="legend-title">Vibe key</span>
+  <div class="legend-items">
+    <div class="legend-item"><span class="noise-pill noise-1">● Quiet</span> conversation-first, no music strain</div>
+    <div class="legend-item"><span class="noise-pill noise-2">● Lively</span> buzzy but talkable</div>
+    <div class="legend-item"><span class="noise-pill noise-3">● Loud</span> high energy, scene-driven</div>
+  </div>
+  <span class="legend-title" style="margin-left: 12px;">Dietary</span>
+  <div class="legend-items">
+    <div class="legend-item"><span class="diet-tag diet-gf-yes" style="font-size:10px">GF ✓</span> gluten-free options readily available</div>
+    <div class="legend-item"><span class="diet-tag diet-gf-lim" style="font-size:10px">GF some</span> limited/ask staff</div>
+    <div class="legend-item"><span class="diet-tag diet-gf-no" style="font-size:10px">GF difficult</span> avoid if strictly GF</div>
+  </div>
+</div>
+
+<!-- ─────────────────── QUIET / UPSCALE ─────────────────── -->
+<div class="section-label">
+  <h2>If the mood is <span>quiet & beautiful</span></h2>
+</div>
+
+<div class="cards-grid">
+
+  <!-- BEIT KANDINOF -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">01</span>
+      <div class="card-badges"><span class="badge badge-jaffa">Jaffa</span></div>
+    </div>
+    <div class="card-name">
+      <h3>בית קנדינוף</h3>
+      <div class="transliteration">Beit Kandinof · HaTsorfim 14, Old Jaffa</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Mon–Thu 6–11pm · Fri–Sat from noon</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <span class="noise-pill noise-1">Quiet</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      An Ottoman stone-arch building at the entrance to Old Jaffa, housing a restaurant-gallery where contemporary art exhibitions rotate every three months and jazz plays in the background. The Jaffa-Mediterranean menu is seasonal and garden-sourced — think roasted fish, ceviche, French-inflected starters — served in beautiful arched rooms with warm candlelight. The most atmospheric and genuinely intimate space on the entire list. Private rooms are available for groups up to 10.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://kandinof.co.il/en/menus_eng/" target="_blank">📋 View Menus</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-lim">GF: some options</span>
+      <span class="diet-tag diet-df-yes">DF: mostly DF</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🎉 <strong>HH:</strong> ~25% off, weekday evenings</div>
+      <div class="footer-tag">💰 Mid-range ₪₪</div>
+      <div class="footer-tag">👥 Group-friendly</div>
+      <div class="footer-tag">🎨 Art gallery inside</div>
+    </div>
+  </div>
+
+  <!-- BECCAFICO -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">02</span>
+      <div class="card-badges"><span class="badge badge-new">New pick</span><span class="badge badge-nevetze">Neve Tzedek</span></div>
+    </div>
+    <div class="card-name">
+      <h3>בקאפיקו</h3>
+      <div class="transliteration">Beccafico · Shabazi 49, Neve Tzedek</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Mon–Thu 5pm–midnight · Fri–Sat from 1pm</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <span class="noise-pill noise-1">Quiet</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      Tucked into the most picturesque stretch of Neve Tzedek's main street, Beccafico is a Sicilian-Italian restaurant that has become a neighbourhood institution since 2014. Handmade pastas, wood-fired pizza, fresh fish, arancini, and an excellent wine list in a warm, unhurried interior with a back courtyard. The owner is famously present and treats every table like a guest at home. The happy hour deal (1+1 starters + 20% off all drinks) is one of the most generous in the city.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://beccafico.co.il/english-menu-2/" target="_blank">📋 Menu (EN)</a>
+      <a class="menu-link" href="https://beccafico.co.il/menu-heb/" target="_blank">📋 תפריט (HE)</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-lim">GF: labelled on menu (fish tartare, sashimi)</span>
+      <span class="diet-tag diet-df-no">DF: limited — cheese/cream heavy</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🎉 <strong>HH:</strong> 1+1 starters + 20% all drinks, Mon–Thu</div>
+      <div class="footer-tag">💰 Mid-range ₪₪</div>
+      <div class="footer-tag">👥 Up to 80 for events</div>
+      <div class="footer-tag">🍕 Italian</div>
+    </div>
+  </div>
+
+  <!-- SHILA -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">03</span>
+      <div class="card-badges"><span class="badge badge-new">New pick</span><span class="badge badge-central">Central TLV</span></div>
+    </div>
+    <div class="card-name">
+      <h3>שילה</h3>
+      <div class="transliteration">Shila · Montefiore 9, Central Tel Aviv</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Daily from 6pm · Also weekday lunch 12:30–4pm</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+      </div>
+      <span class="noise-pill noise-2">Lively</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      Tel Aviv's most storied seafood restaurant, just reopened in a spectacular new space: a soaring multi-room dining room in the Gymnasium Hotel with a live lobster tank, oyster station, 200-label wine room, and an open kitchen. Chef Sharon Cohen's cooking — pristine fish, impeccable pasta, generous portions — is 20+ years in the making. Specifically praised for outstanding acoustics despite the scale. The most upscale option on the list; no formal happy hour but house wine at ₪35/glass is genuinely exceptional for this level.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://en.shila-rest.co.il/menu/dinner/" target="_blank">📋 Dinner Menu</a>
+      <a class="menu-link" href="https://en.shila-rest.co.il/menu/wine-menu/" target="_blank">🍷 Wine Menu</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-yes">GF: many fish/crudo dishes naturally GF</span>
+      <span class="diet-tag diet-df-no">DF: limited — butter, cream used widely</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🍷 <strong>Wine:</strong> ₪35/glass house, ₪99+ bottles</div>
+      <div class="footer-tag">💰 Upscale ₪₪₪₪</div>
+      <div class="footer-tag">🐟 Seafood specialist</div>
+      <div class="footer-tag">🏆 Institution</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────────────── LIVELY MIDDLE GROUND ─────────────────── -->
+<div class="section-label" style="margin-top: 32px;">
+  <h2>The <span>sweet spot</span> — great food, still talkable</h2>
+</div>
+
+<div class="cards-grid">
+
+  <!-- CICCHETTI -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">04</span>
+      <div class="card-badges"><span class="badge badge-central">Central TLV</span></div>
+    </div>
+    <div class="card-name">
+      <h3>צ'יקטי</h3>
+      <div class="transliteration">Cicchetti · Yehuda HaLevi 58</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Sun–Thu 4–10:30pm · Fri–Sat from 11am (brunch) & 6pm</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+      </div>
+      <span class="noise-pill noise-2">Lively</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      A Venetian-style aperitivo bar on a beautiful corner of central Tel Aviv — consistently ranked among Israel's best Italian restaurants. The concept is Venetian cicchetti: small sharing plates of fresh fish, pasta, seafood, and charcuterie alongside prosecco on tap and cocktails mixed by Avi Kashi at the bar. The street tables and long bar keep it animated without being loud. The 30% aperitivo deal runs every weekday 4–6pm. Reserve ahead — this place is always full.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://www.cicchettitlv.com/menu" target="_blank">📋 Dinner Menu</a>
+      <a class="menu-link" href="https://www.cicchettitlv.com/aperativo" target="_blank">🥂 Aperitivo HH</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-lim">GF: some fish/charcuterie plates; pasta/pizza not GF</span>
+      <span class="diet-tag diet-df-no">DF: limited — cheese and cream central to menu</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🎉 <strong>HH:</strong> 30% off everything, daily 4–6pm</div>
+      <div class="footer-tag">💰 Mid-upper ₪₪₪</div>
+      <div class="footer-tag">🍷 Prosecco on tap</div>
+      <div class="footer-tag">📅 Book ahead</div>
+    </div>
+  </div>
+
+  <!-- VERMUTERIA -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">05</span>
+      <div class="card-badges"><span class="badge badge-new">New pick</span><span class="badge badge-central">Central TLV</span></div>
+    </div>
+    <div class="card-name">
+      <h3>ורמוטריה</h3>
+      <div class="transliteration">Vermuteria · Nachalat Binyamin 25</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Sun–Thu 5–11pm · Fri–Sat 11:30am–3pm & 6–11pm</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+      </div>
+      <span class="noise-pill noise-2">Lively</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      The quieter, more mature sibling of Cicchetti — same ownership and chef (Michael Gertofsky), but Spanish in spirit: vermouth, sherry, pintxos, gambas al ajillo, beef tartare, pan con tomate, and a full lavraki paella. The aperitivo ritual (vermotivo) runs Sun–Thu 5–7pm. Critics note the crowd skews slightly older than Cicchetti, which for a mixed-age group is a real asset. Warm indoor room, covered outdoor seating, and street tables on lively Nachalat Binyamin.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://www.vermuteria.co.il/" target="_blank">🌐 Website</a>
+      <a class="menu-link" href="https://www.happytlv.com/en/happyhourmenu/%D7%95%D7%A8%D7%9E%D7%95%D7%98%D7%A8%D7%99%D7%94" target="_blank">📋 HH Menu</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-lim">GF: many tapas naturally GF (gambas, salads, meat)</span>
+      <span class="diet-tag diet-df-yes">DF: mostly DF — Spanish tapas style</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🎉 <strong>HH:</strong> Vermotivo aperitivo, Sun–Thu 5–7pm</div>
+      <div class="footer-tag">💰 Mid-range ₪₪–₪₪₪</div>
+      <div class="footer-tag">🇪🇸 Spanish</div>
+      <div class="footer-tag">👥 Mixed ages</div>
+    </div>
+  </div>
+
+  <!-- TYO -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">06</span>
+      <div class="card-badges"><span class="badge badge-nevetze">Neve Tzedek</span></div>
+    </div>
+    <div class="card-name">
+      <h3>TYO</h3>
+      <div class="transliteration">Shabazi 58, Neve Tzedek</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Daily 12pm–midnight (Thu until 1am)</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot"></div>
+      </div>
+      <span class="noise-pill noise-2">Lively → Loud later</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      A Japanese restaurant-bar in a spectacular preserved 120-year-old building in Neve Tzedek, led by Yama-San — Israel's only certified sushi master, trained at Morimoto. The menu spans traditional sushi, izakaya-style small plates, and tuna pizza that has become something of a Tel Aviv legend. The 25% happy hour (Sun–Wed 4–7pm) makes a typically premium experience accessible. Beautiful space, upscale crowd. Note: staff can be indifferent with large groups — reserve and confirm in advance.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://tyo.co.il/tyo-%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%A2%D7%A8%D7%91/" target="_blank">📋 Evening Menu</a>
+      <a class="menu-link" href="https://tyo.co.il/tyo-%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%A6%D7%94%D7%A8%D7%99%D7%99%D7%9D/" target="_blank">☀️ Lunch Menu</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-yes">GF: sushi/sashimi/crudo dishes naturally GF; ask about soy sauce</span>
+      <span class="diet-tag diet-df-yes">DF: Japanese cuisine — largely dairy-free</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🎉 <strong>HH:</strong> 25% off everything, Sun–Wed 4–7pm</div>
+      <div class="footer-tag">💰 Upscale ₪₪₪₪</div>
+      <div class="footer-tag">🍣 Japanese</div>
+      <div class="footer-tag">📅 Reserve ahead</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────────────── HIGH ENERGY / JAFFA ─────────────────── -->
+<div class="section-label" style="margin-top: 32px;">
+  <h2>If the mood is <span>fun & festive</span> — Jaffa flea market</h2>
+</div>
+
+<div class="cards-grid">
+
+  <!-- CAPTAIN HOOK -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">07</span>
+      <div class="card-badges"><span class="badge badge-jaffa">Jaffa</span></div>
+    </div>
+    <div class="card-name">
+      <h3>קפטן הוקי</h3>
+      <div class="transliteration">Captain Hook · Amiad 13, Jaffa Flea Market</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Tue–Sat 11:30am–10pm · Sun closed</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <span class="noise-pill noise-3">Loud</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      A small but beloved fish spot in the flea market, founded by Bilal Haga from Sakhnin and run with visible pride. The concept is Arab-European fusion: fish & chips with harissa and preserved lemon, sashimi-style sea bream on matbucha with eggplant, ceviche with seasonal fruit, fish shawarma. Everything is fresh and made with care. Open-air courtyard tables face the market square and its weekend street performances. A great early-evening option before moving on elsewhere.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://captainhook.co.il/menu/" target="_blank">📋 Full Menu</a>
+      <a class="menu-link" href="https://captainhook.co.il/menu/" target="_blank">🍺 Drinks Menu</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-no">GF: difficult — most mains are battered/fried with gluten</span>
+      <span class="diet-tag diet-df-yes">DF: largely dairy-free (fish-based kitchen)</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🎉 <strong>HH:</strong> 20% off, Mon–Thu 5–7pm</div>
+      <div class="footer-tag">💰 Affordable ₪₪</div>
+      <div class="footer-tag">🐟 Fish & seafood</div>
+      <div class="footer-tag">🌍 Arab-European</div>
+    </div>
+  </div>
+
+  <!-- ROMANO -->
+  <div class="card">
+    <div class="card-top">
+      <span class="card-number">08</span>
+      <div class="card-badges"><span class="badge badge-jaffa">Jaffa border</span></div>
+    </div>
+    <div class="card-name">
+      <h3>רומנו</h3>
+      <div class="transliteration">Romano · Derech Jaffa 9</div>
+    </div>
+    <div class="card-meta">
+      <div class="meta-item"><span class="meta-icon">🕐</span> Daily from 6pm</div>
+    </div>
+    <div class="noise-bar">
+      <span>Vibe:</span>
+      <div class="noise-dots">
+        <div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot filled loud"></div><div class="dot filled loud"></div>
+      </div>
+      <span class="noise-pill noise-3">Loud</span>
+    </div>
+    <div class="card-divider"></div>
+    <div class="card-pitch">
+      The most quintessentially Tel Aviv experience on the list — a buzzing Eyal Shani restaurant-bar in an open historic courtyard, where new chef Pasha Chkin has just refreshed the menu toward a gastropub direction: beef kebab on warm laffa, black pasta with cuttlefish, scallop liver, charred corn, roasted artichoke fritters. Electric energy, beautiful crowd, and Teder — one of the city's best music venues — right next door. The 20% happy hour (until 7:30pm Sun–Thu) makes it a brilliant entry point to the evening.
+    </div>
+    <div class="card-links">
+      <a class="menu-link" href="https://ontopo.co.il/en/romano/menu" target="_blank">📋 Menu on Ontopo</a>
+    </div>
+    <div class="dietary-row">
+      <span class="diet-tag diet-gf-lim">GF: most vegetable/fish dishes naturally GF; bread/pasta items are not</span>
+      <span class="diet-tag diet-df-yes">DF: mostly DF — Eyal Shani style avoids dairy by default</span>
+    </div>
+    <div class="card-footer">
+      <div class="footer-tag">🎉 <strong>HH:</strong> 20% off, Sun–Thu until 7:30pm</div>
+      <div class="footer-tag">💰 Affordable ₪₪</div>
+      <div class="footer-tag">🎵 Teder next door</div>
+      <div class="footer-tag">⚡ High energy</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────────────── QUICK REFERENCE ─────────────────── -->
+<div class="quick-ref">
+  <div class="quick-ref-header">Quick Reference</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Place</th>
+        <th>Area</th>
+        <th>Happy Hour</th>
+        <th>Opens (Sun–Thu)</th>
+        <th>Price</th>
+        <th>GF</th>
+        <th>DF</th>
+        <th>Vibe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>בית קנדינוף</td>
+        <td>Old Jaffa</td>
+        <td><span class="hh-pill">~25% off</span></td>
+        <td>6pm</td>
+        <td>₪₪</td>
+        <td>Some</td>
+        <td>Mostly ✓</td>
+        <td>🔇 Quiet</td>
+      </tr>
+      <tr>
+        <td>בקאפיקו</td>
+        <td>Neve Tzedek</td>
+        <td><span class="hh-pill">1+1 + 20% drinks</span></td>
+        <td>5pm (Sun closed)</td>
+        <td>₪₪</td>
+        <td>Labelled</td>
+        <td>Limited</td>
+        <td>🔇 Quiet</td>
+      </tr>
+      <tr>
+        <td>שילה</td>
+        <td>Montefiore</td>
+        <td><span class="no-hh">No formal HH</span></td>
+        <td>6pm</td>
+        <td>₪₪₪₪</td>
+        <td>Many ✓</td>
+        <td>Limited</td>
+        <td>🔉 Lively</td>
+      </tr>
+      <tr>
+        <td>צ'יקטי</td>
+        <td>Yehuda HaLevi</td>
+        <td><span class="hh-pill">30% off 4–6pm</span></td>
+        <td>4pm</td>
+        <td>₪₪₪</td>
+        <td>Some</td>
+        <td>Limited</td>
+        <td>🔉 Lively</td>
+      </tr>
+      <tr>
+        <td>ורמוטריה</td>
+        <td>Nachalat Binyamin</td>
+        <td><span class="hh-pill">Aperitivo 5–7pm</span></td>
+        <td>5pm</td>
+        <td>₪₪–₪₪₪</td>
+        <td>Many ✓</td>
+        <td>Mostly ✓</td>
+        <td>🔉 Lively</td>
+      </tr>
+      <tr>
+        <td>TYO</td>
+        <td>Neve Tzedek</td>
+        <td><span class="hh-pill">25% off Sun–Wed 4–7pm</span></td>
+        <td>12pm</td>
+        <td>₪₪₪₪</td>
+        <td>Many ✓</td>
+        <td>Yes ✓</td>
+        <td>🔉 Lively</td>
+      </tr>
+      <tr>
+        <td>קפטן הוקי</td>
+        <td>Jaffa market</td>
+        <td><span class="hh-pill">20% off Mon–Thu 5–7pm</span></td>
+        <td>11:30am</td>
+        <td>₪₪</td>
+        <td>Difficult</td>
+        <td>Yes ✓</td>
+        <td>📢 Loud</td>
+      </tr>
+      <tr>
+        <td>רומנו</td>
+        <td>Jaffa/Florentin border</td>
+        <td><span class="hh-pill">20% off until 7:30pm</span></td>
+        <td>6pm</td>
+        <td>₪₪</td>
+        <td>Some</td>
+        <td>Mostly ✓</td>
+        <td>📢 Loud</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer-note">
+  <strong>Recommendations by mood:</strong> For the conversation-first evening, start at <strong>Beit Kandinof</strong> or <strong>Beccafico</strong> — both are genuinely beautiful and quiet. For the classic Tel Aviv night out, <strong>Romano</strong> during happy hour then walk next door to Teder is hard to beat. <strong>Cicchetti</strong> and <strong>Vermuteria</strong> are the safest choices for a mixed-age group — consistent, reliably good, easy. <strong>Shila</strong> is the pick if someone wants a proper wow dinner.
+  <br><br>
+  <strong>For out-of-town guests:</strong> Beit Kandinof (unique Jaffa setting), Romano (quintessential TLV energy), or Cicchetti (universally accessible) are all strong first-impression picks.
+</div>
+
+</body>
+</html>
